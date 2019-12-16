@@ -1,0 +1,220 @@
+/* input default text size for disabled iOS auto Zoom in */
+input,
+input[type="text"],
+input[type="password"],
+select:focus {
+    font-size: 16px !important;
+}
+
+/* font settings */
+
+$bebasNeue: "BebasNeue";
+
+@mixin fontStyle($fontSize, $color) {
+    font-family: $bebasNeue;
+    font-size: $fontSize;
+    color: $color;
+}
+
+$fontSize_default: 1em;
+$fontSize_normal: 0.9em;
+$fontSize_small: 0.8em;
+$fontSize_mini: 0.65em;
+
+@mixin closeBtnFakeEl {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 1px;
+    background: #fff;
+}
+
+/* iPhone X Safe Area fixing */
+
+/* iOS 11 up */
+
+@mixin safeArea {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* iOS lower than 11 */
+
+@mixin safeAreaOld {
+    padding-top: constant(safe-area-inset-top);
+    padding-left: constant(safe-area-inset-left);
+    padding-right: constant(safe-area-inset-right);
+    padding-bottom: constant(safe-area-inset-bottom);
+}
+
+/* mixing obj */
+
+@mixin bgColor($bgColor) {
+    background-color: $bgColor;
+}
+
+@mixin fontSize($fontSize) {
+    font-size: $fontSize;
+}
+
+@mixin radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+}
+
+@mixin boxSizing {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+/* easing function */
+
+@mixin easeInOut($time) {
+    transition: all $time ease-in-out;
+    -webkit-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+}
+
+@mixin easeInOutExpo($time) {
+    transition: all $time cubic-bezier(1, 0, 0, 1);
+    -webkit-transition: all $time cubic-bezier(1, 0, 0, 1);
+    -moz-transition: all $time cubic-bezier(1, 0, 0, 1);
+    -o-transition: all $time cubic-bezier(1, 0, 0, 1);
+}
+
+@mixin easeInOutQuint($time) {
+    transition: all $time cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-transition: all $time cubic-bezier(0.86, 0, 0.07, 1);
+    -moz-transition: all $time cubic-bezier(0.86, 0, 0.07, 1);
+    -o-transition: all $time cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@mixin easeInOutBack($time) {
+    transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Transform */
+
+@mixin transRotate($deg) {
+    transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+}
+
+/* filter */
+
+@mixin blur($blur) {
+    -webkit-filter: blur($blur);
+    -moz-filter: blur($blur);
+    -o-filter: blur($blur);
+    -ms-filter: blur($blur);
+    filter: blur($blur);
+}
+
+/* FlexBox */
+
+@for $i from 1 through 5 {
+    .flex#{$i} {
+        flex: $i;
+    }
+}
+
+@mixin flexBox($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin flexAlign($alignItems, $justifyContent) {
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+/* position offset */
+
+@mixin offSet($top, $right, $bottom, $left) {
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+}
+
+/* grid system */
+
+@mixin grid_wrapper($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin grid($flex, $direction) {
+    flex: $flex;
+    flex-direction: $direction;
+}
+
+/* media query */
+
+$ipad: "screen and (max-width: 1024px) and (orientation: landscape)";
+$iphoneX: "screen and (max-width: 812px) and (max-height: 375px)";
+
+@mixin ipad {
+    @media #{$ipad} {
+        @content;
+    }
+}
+
+@mixin iphoneX {
+    @media #{$iphoneX} {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media all and (max-width: 1100px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media all and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin ml {
+    @media all and (max-width: 800px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media all and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media all and (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media all and (max-width: 400px) {
+        @content;
+    }
+}
+
+@mixin ls {
+    @media all and (orientation: landscape) {
+        @content;
+    }
+}
