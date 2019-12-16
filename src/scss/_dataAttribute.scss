@@ -11,7 +11,7 @@
 // html ex: data-space-next='0.5rem'
 @each $direction in "next", "before", "vertical", "horizontal", "bottom" {
     @for $i from 0 through 4 {
-        [data-space-#{$direction}="#{$i * 0.5 + "rem"}"] {
+        [data-space-#{$direction}="#{$i * 0.5 + 'rem'}"] {
             @if $direction == "next" {
                 margin-right: #{$i * 0.5 + "rem"};
             }
@@ -66,14 +66,14 @@
 }
 
 @for $i from 1 through 50 {
-    [data-v-space="#{$i * 0.1 + "rem"}"] {
-        padding: #{$i * 0.1 + "rem"} 0;
+    [data-v-space="#{$i * 0.1 + 'rem'}"] {
+        padding: #{$i * 0.1 + 'rem'} 0;
     }
 }
 
 @for $i from 1 through 50 {
     @each $direction in "top", "left", "right", "bottom" {
-        [data-space-#{$direction}="#{$i * 0.1 + "rem"}"] {
+        [data-space-#{$direction}="#{$i * 0.1 + 'rem'}"] {
             padding#{"-" + $direction}: #{$i * 0.1 + "rem"};
         }
     }
