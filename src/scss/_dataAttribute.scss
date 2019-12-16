@@ -1,0 +1,314 @@
+[data-space="space-next"] {
+    margin-right: 1rem;
+}
+
+@for $i from 1 through 10 {
+    [data-space-next='#{$i * 0.1 + "rem"}'] {
+        margin-right: #{$i * 0.1 + "rem"};
+    }
+}
+
+// html ex: data-space-next='0.5rem'
+@each $direction in "next", "before", "vertical", "horizontal", "bottom" {
+    @for $i from 0 through 4 {
+        [data-space-#{$direction}="#{$i * 0.5 + "rem"}"] {
+            @if $direction == "next" {
+                margin-right: #{$i * 0.5 + "rem"};
+            }
+
+            @if $direction == "before" {
+                margin-left: #{$i * 0.5 + "rem"};
+            }
+
+            @if $direction == "vertical" {
+                margin: #{$i * 0.5 + "rem"} 0;
+            }
+
+            @if $direction == "horizontal" {
+                margin: 0 #{$i * 0.5 + "rem"};
+            }
+
+            @if $direction == "bottom" {
+                margin-bottom: #{$i * 0.5 + "rem"};
+            }
+        }
+    }
+}
+
+//space direction
+[data-space="space-before"] {
+    margin-left: 1rem;
+}
+
+[data-space="space-vertical"] {
+    margin: 1rem 0;
+}
+
+[data-space="space-horizontal"] {
+    margin: 0 1rem;
+}
+
+[data-space="space-top"] {
+    margin-top: 1rem;
+}
+
+[data-space="space-bottom"] {
+    margin-bottom: 1rem;
+}
+
+[data-space="padding-xs"] {
+    padding: 0.5rem;
+}
+
+[data-width="column-name"] {
+    width: 10rem;
+    line-height: 1.3;
+}
+
+@for $i from 1 through 50 {
+    [data-v-space="#{$i * 0.1 + "rem"}"] {
+        padding: #{$i * 0.1 + "rem"} 0;
+    }
+}
+
+@for $i from 1 through 50 {
+    @each $direction in "top", "left", "right", "bottom" {
+        [data-space-#{$direction}="#{$i * 0.1 + "rem"}"] {
+            padding#{"-" + $direction}: #{$i * 0.1 + "rem"};
+        }
+    }
+}
+
+//border
+
+[data-border="left"] {
+    border-left: 1px solid $lightGray;
+}
+
+@each $direction in "top", "left", "right", "bottom" {
+    [data-border="#{$direction}"] {
+        #{"border-" + $direction}: 1px solid $lightGray;
+    }
+}
+
+[data-border="left"]:first-child {
+    border-left: none;
+}
+
+[data-border="bottom"] {
+    border-bottom: 1px solid $lightGray;
+}
+
+[data-border="bottom"]:last-child {
+    border-bottom: none;
+}
+
+[data-border="horizontal"] {
+    border-left: 1px solid $lightGray;
+    border-right: 1px solid $lightGray;
+}
+
+//
+
+@each $clearList in "top", "left", "right", "bottom" {
+    [data-border-clear="#{$clearList}"] {
+        #{"border-" + $clearList}: none;
+    }
+}
+
+[data-border="none"] {
+    border: none;
+}
+
+// text-align
+
+@each $fontAlign in left, right, center {
+    [data-font-align="#{$fontAlign}"] {
+        text-align: $fontAlign;
+    }
+}
+
+@each $fontSize in "default", "small", "xs", "large", "xl" {
+    [data-font-size="#{$fontSize}"] {
+        @if $fontSize == "default" {
+            font-size: 1rem;
+        }
+
+        @if $fontSize == "small" {
+            font-size: 0.85rem;
+        }
+
+        @if $fontSize == "xs" {
+            font-size: 0.6rem;
+        }
+
+        @if $fontSize == "large" {
+            font-size: 1.2rem;
+        }
+
+        @if $fontSize == "xl" {
+            font-size: 2rem;
+        }
+    }
+}
+
+[data-font-size="default"] {
+    font-size: 1rem;
+}
+
+//font color
+@each $color in "red", "blue", "carrot-orange" {
+    [data-color="#{$color}"] {
+        color: #{$color};
+
+        @if $color == "carrot-orange" {
+            color: #{$carrotOrange};
+        }
+    }
+}
+
+//max and min-width
+
+@each $maxWidth in "xs", "small", "default", "medium", "large", "xl" {
+    [data-max-width="#{$maxWidth}"] {
+        @if $maxWidth == "xs" {
+            max-width: 80px;
+        }
+
+        @if $maxWidth == "small" {
+            max-width: 120px;
+        }
+
+        @if $maxWidth == "default" {
+            max-width: 160px;
+        }
+
+        @if $maxWidth == "medium" {
+            max-width: 200px;
+        }
+
+        @if $maxWidth == "large" {
+            max-width: 300px;
+        }
+
+        @if $maxWidth == "xl" {
+            max-width: 500px;
+        }
+    }
+}
+
+//width percentage
+@for $i from 0 through 100 {
+    [data-width='#{$i + "%"}'] {
+        width: #{$i + "%"};
+    }
+}
+
+//width rem
+@for $i from 1 through 100 {
+    [data-width='#{$i + "rem"}'] {
+        width: #{$i + "rem"};
+    }
+}
+
+// @for $i from 1 through 100 {
+//     [data-width="#{$i * 0.1 + 'rem'}"] {
+//         width: #{$i * 0.1 + 'rem'};
+//     }
+// }
+
+//width size prefix
+@each $size in "small", "default", "large", "xl" {
+    [data-width='#{$size}'] {
+        @if $size == "small" {
+            width: 320px;
+        }
+
+        @if $size == "default" {
+            width: 768px;
+        }
+
+        @if $size == "large" {
+            width: 800px;
+        }
+
+        @if $size == "xl" {
+            width: 1000px;
+        }
+    }
+}
+
+//height
+
+@for $i from 1 through 100 {
+    [data-height="#{$i}vh"] {
+        height: #{$i}vh;
+    }
+}
+
+//data-inset float
+@for $i from 0 through 20 {
+    [data-inset="#{$i * 0.1}rem"] {
+        padding: #{$i * 0.1}rem;
+    }
+}
+
+//data-flex
+@for $i from 0 through 24 {
+    [data-flex="#{$i}"] {
+        flex: #{$i};
+    }
+}
+
+//input adjust
+
+@each $dataAttr in "default", "full", "short", "common-count", "keywords", "long-string", "date", "caption", "search", "xs" {
+    [data-style="#{$dataAttr}"] {
+        @if $dataAttr == "default" {
+            width: 8rem;
+        }
+
+        @if $dataAttr == "common-count" {
+            width: 10rem;
+            margin-right: 10px;
+        }
+
+        @if $dataAttr == "long-string" {
+            width: 20rem;
+        }
+
+        @if $dataAttr == "short" {
+            width: 6.5rem;
+        }
+
+        @if $dataAttr == "full" {
+            width: 100%;
+        }
+
+        @if $dataAttr == "date" {
+            width: 100%;
+            margin: 0;
+            padding-right: 26px;
+        }
+
+        @if $dataAttr == "caption" {
+            width: 100%;
+            margin: 0;
+            border-right: none;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 0;
+        }
+
+        @if $dataAttr == "search" {
+            width: 100%;
+            margin: 0;
+            padding-right: 26px;
+        }
+
+        @if $dataAttr == "xs" {
+            width: 3rem;
+        }
+    }
+}
