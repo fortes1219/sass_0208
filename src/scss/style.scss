@@ -15,3 +15,51 @@ html {
     }
 }
 
+.app {
+    @include flexBox(column);
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    @include flexBox(row);
+    @include flexAlign(center, space-between);
+    @include boxSizing;
+    width: 100%;
+    height: 70px;
+    padding: 0 1rem;
+    background-color: #333;
+    h1 {
+        font-weight: normal;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+    .toolbar {
+        @include flexBox(row);
+        @include flexAlign(center, space-between);
+
+        height: 100%;
+        i {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #999;
+        }
+    }
+}
+
+.page {
+    @include flexBox(column);
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #fefefe;
+}
+
+.tab_bar {
+    @include flexBox(row);
+    @include flexAlign(center, space-between);
+    height: 50px;
+    background-color: #999;
+}
