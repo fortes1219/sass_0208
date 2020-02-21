@@ -85,6 +85,10 @@
     border-left: 1px solid $lightGray;
 }
 
+[data-border="all"] {
+    border: 1px solid $dark;
+}
+
 @each $direction in "top", "left", "right", "bottom" {
     [data-border="#{$direction}"] {
         #{"border-" + $direction}: 1px solid $lightGray;
