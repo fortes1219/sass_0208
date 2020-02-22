@@ -62,4 +62,17 @@ html {
     @include flexAlign(center, space-between);
     height: 50px;
     background-color: #999;
+    .tab_btn {
+        @include flexBox(row);
+        @include flexAlign(center, flex-start);
+        &:before {
+            content: '1';
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            background-color: #333;
+            margin-right: 1rem;
+            color: #fff;
+        }
+    }
 }
