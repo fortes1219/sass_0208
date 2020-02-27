@@ -15,6 +15,50 @@ html {
     }
 }
 
-div {
-    width: auto;
+@mixin baseParameter {
+    display: flex;
+    width: 100%;
 }
+
+.page {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #efefef;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    .header {
+        @include baseParameter;
+        height: 56px;
+        background-color: #333;
+        p {
+            color: $white;
+        }
+    }
+
+    .container {
+        @include baseParameter;
+        height: 100%;
+        background-color: #bbb;
+    }
+
+    .footer {
+        @include baseParameter;
+        height: 44px;
+        background-color: #000;
+    }
+}
+
+span {
+    width: 8rem;
+    height: 8rem;
+    background-color: #333;
+    margin: 1rem;
+    color: #fff;
+}
+
+
+
+
