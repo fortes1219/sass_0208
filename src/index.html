@@ -1,28 +1,90 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="css/style.css">
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>github page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
 </head>
-
 <body>
-	<h1>View Height</h1>
-	<br>
-	<h2>View Height</h2>
-	<div class="row horizontal wrap container" data-row-count="3">
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-		<span class="data_row"></span>
-	</div>
+  <div class="app">
+    <div class="header">
+      <h1>APP Name</h1>
+      <div class="toolbar" data-width="4rem">
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </div>
+    <div class="page">
+      <img src="./img/banner.jpg" class="banner"/>
+      <div class="launch_bar">
+        <span class="shortcut">
+          <i class="launch_icons"></i>
+          <p>Item 1</p>
+        </span>
+        <span class="shortcut">
+          <i class="launch_icons"></i>
+          <p>Item 2</p>
+        </span>
+        <span class="shortcut">
+          <i class="launch_icons"></i>
+          <p>Item 3</p>
+        </span>
+        <span class="shortcut">
+          <i class="launch_icons"></i>
+          <p>Item 4</p>
+        </span>
+        <span class="shortcut">
+          <i class="launch_icons"></i>
+          <p>Item 5</p>
+        </span>
+      </div>
+      <div class="contents">
+        <div class="row vertical">
+          <div class="row" data-space-vertical="1rem">
+            <img src="img/FGO.jpg" class="content_large">
+          </div>
+          <div class="row horizontal">
+            <div class="row" data-flex="1" data-space-next="1rem">
+              <img src="img/FGO_2.jpg" class="content_medium">
+            </div>
+            <div class="row" data-flex="1">
+              <img src="img/FGO_2.jpg" class="content_medium">
+            </div>
+          </div>
+        </div>
+        <div class="row vertical">
+          <div class="row" data-space-vertical="1rem">
+            <img src="img/FGO.jpg" class="content_large">
+          </div>
+          <div class="row horizontal">
+            <div class="row" data-flex="1" data-space-next="1rem">
+              <img src="img/FGO_2.jpg" class="content_medium">
+            </div>
+            <div class="row" data-flex="1">
+              <img src="img/FGO_2.jpg" class="content_medium">
+            </div>
+          </div>
+        </div>
+        <div class="row vertical">
+          <div class="row" data-space-vertical="1rem">
+            <img src="img/FGO.jpg" class="content_large">
+          </div>
+          <div class="row horizontal">
+            <div class="row" data-flex="1" data-space-next="1rem">
+              <img src="img/FGO_2.jpg" class="content_medium">
+            </div>
+            <div class="row" data-flex="1">
+              <img src="img/FGO_2.jpg" class="content_medium">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab_bar">
+      <span class="tab_btn">Tab1</span>
+    </div>
+  </div>
 </body>
-
 </html>

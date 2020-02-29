@@ -3,6 +3,7 @@
 @import "_commonStyle.scss";
 @import "_flexbox.scss";
 @import "_dataAttribute.scss";
+@import "mediaQueries.scss";
 
 html {
     touch-action: manipulation;
@@ -12,5 +13,123 @@ html {
         font-family: "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
         touch-action: manipulation;
         height: 100%;
+    }
+}
+
+.app {
+    @include flexBox(column);
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    @include flexBox(row);
+    @include flexAlign(center, space-between);
+    @include boxSizing;
+    width: 100%;
+    height: 70px;
+    padding: 0 1rem;
+    background-color: #333;
+    @include iphoneX {
+        background-color: #000099;
+    }
+    h1 {
+        font-weight: normal;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+    .toolbar {
+        @include flexBox(row);
+        @include flexAlign(center, space-between);
+
+        height: 100%;
+        i {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #999;
+        }
+    }
+}
+
+.page {
+    @include flexBox(column);
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #fefefe;
+    .banner {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .launch_bar{
+        @include flexBox(row);
+        @include flexAlign(center, space-between);
+        @include boxSizing;
+        width: 100%;
+        height: 74px;
+        background-color: #999;
+        padding: 0.3rem 0;
+        .shortcut {
+            @include flexBox(column);
+            @include flexAlign(center, center);
+            flex: 1;
+            .launch_icons {
+                position: relative;
+                width: 6vh;
+                height: 6vh;
+                border-radius: 50%;
+                background-color: #bebebe;
+                margin-bottom: 0.3rem;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    right: -4px;
+                    bottom: -4px;
+                    width: 2vh;
+                    height: 2vh;
+                    border-radius: 50%;
+                    background-color: #333;
+                }
+            }
+            p {
+                text-align: center;
+                font-size: 0.75rem;
+                color: #333;
+            }
+        }
+    }
+
+    .contents {
+        .content_large {
+            width: 100%;
+        }
+        .content_medium {
+            @extend .content_large; 
+        }
+    }
+
+    
+}
+
+.tab_bar {
+    @include flexBox(row);
+    @include flexAlign(center, space-between);
+    height: 50px;
+    background-color: #999;
+    .tab_btn {
+        @include flexBox(row);
+        @include flexAlign(center, flex-start);
+        &:before {
+            content: '1';
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            background-color: #333;
+            margin-right: 1rem;
+            color: #fff;
+        }
     }
 }

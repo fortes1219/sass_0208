@@ -1,0 +1,7 @@
+
+$iphoneX: "screen and (min-width: 375px) and (min-height: 812px)";
+@mixin iphoneX {
+    @media #{$iphoneX} {
+        @content;
+    }
+}
