@@ -1,3 +1,13 @@
+@mixin flexBox($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin flexAlign($alignItems, $justifyContent) {
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
 @mixin dataRowCount {
     @for $i from 1 through 24 {
         [data-row-count="#{$i}"] {
@@ -55,6 +65,10 @@
 
         &.bottom_right {
             @include flexAlign(flex-end, flex-end);
+        }
+
+        &.space {
+            justify-content: space-between;
         }
     }
 

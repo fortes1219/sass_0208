@@ -129,16 +129,6 @@ $fontSize_mini: 0.65em;
     }
 }
 
-@mixin flexBox($direction) {
-    display: flex;
-    flex-direction: $direction;
-}
-
-@mixin flexAlign($alignItems, $justifyContent) {
-    align-items: $alignItems;
-    justify-content: $justifyContent;
-}
-
 /* position offset */
 
 @mixin offSet($top, $right, $bottom, $left) {
