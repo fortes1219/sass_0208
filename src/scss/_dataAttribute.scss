@@ -11,7 +11,7 @@
 // html ex: data-space-next='0.5rem'
 @each $direction in "next", "before", "vertical", "horizontal", "bottom" {
     @for $i from 0 through 10 {
-        [data-space-#{$direction}="#{$i * 0.1 + "rem"}"] {
+        [data-space-#{$direction}="#{$i * 0.1 + 'rem'}"] {
             @if $direction == "next" {
                 margin-right: #{$i * 0.1 + "rem"};
             }
