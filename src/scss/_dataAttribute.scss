@@ -8,16 +8,10 @@
     }
 }
 
-// @for $i from 1 through 20 {
-//     [data-space-next='#{$i * 0.1 + "%"}'] {
-//         margin-right: #{$i * 0.1 + "%"};
-//     }
-// }
-
 // html ex: data-space-next='0.5rem'
 @each $direction in "next", "before", "vertical", "horizontal", "bottom" {
     @for $i from 0 through 10 {
-        [data-space-#{$direction}="#{$i * 0.1 + 'rem'}"] {
+        [data-space-#{$direction}="#{$i * 0.1 + "rem"}"] {
             @if $direction == "next" {
                 margin-right: #{$i * 0.1 + "rem"};
             }
@@ -36,6 +30,33 @@
 
             @if $direction == "bottom" {
                 margin-bottom: #{$i * 0.1 + "rem"};
+            }
+        }
+    }
+}
+
+// 百分比的寫法
+@each $direction in "next", "before", "vertical", "horizontal", "bottom" {
+    @for $i from 0 through 20 {
+        [data-space-#{$direction}-percent="#{$i * 0.1 + "%"}"] {
+            @if $direction == "next" {
+                margin-right: #{$i * 0.1 + "%"};
+            }
+
+            @if $direction == "before" {
+                margin-left: #{$i * 0.1 + "%"};
+            }
+
+            @if $direction == "vertical" {
+                margin: #{$i * 0.1 + "%"} 0;
+            }
+
+            @if $direction == "horizontal" {
+                margin: 0 #{$i * 0.1 + "%"};
+            }
+
+            @if $direction == "bottom" {
+                margin-bottom: #{$i * 0.1 + "%"};
             }
         }
     }
@@ -72,14 +93,14 @@
 }
 
 @for $i from 1 through 50 {
-    [data-v-space="#{$i * 0.1 + 'rem'}"] {
-        padding: #{$i * 0.1 + 'rem'} 0;
+    [data-v-space="#{$i * 0.1 + "rem"}"] {
+        padding: #{$i * 0.1 + "rem"} 0;
     }
 }
 
 @for $i from 1 through 50 {
     @each $direction in "top", "left", "right", "bottom" {
-        [data-space-#{$direction}="#{$i * 0.1 + 'rem'}"] {
+        [data-space-#{$direction}="#{$i * 0.1 + "rem"}"] {
             padding#{"-" + $direction}: #{$i * 0.1 + "rem"};
         }
     }
