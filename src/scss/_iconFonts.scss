@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "iconfonts";
+  src:url("../fonts/iconfonts.eot");
+  src:url("../fonts/iconfonts.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/iconfonts.woff") format("woff"),
+    url("../fonts/iconfonts.ttf") format("truetype"),
+    url("../fonts/iconfonts.svg#iconfonts") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "iconfonts" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="app-"]:before,
+[class*=" app-"]:before {
+  font-family: "iconfonts" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-about:before {
+  content: "\e000";
+}
+.app-back:before {
+  content: "\e001";
+}
+.app-calendar:before {
+  content: "\e002";
+}
+.app-check:before {
+  content: "\e003";
+}
+.app-credit-card:before {
+  content: "\e004";
+}
+.app-degital:before {
+  content: "\e005";
+}
+.app-delete:before {
+  content: "\e006";
+}
+.app-exchange:before {
+  content: "\e007";
+}
+.app-export:before {
+  content: "\e008";
+}
+.app-filter:before {
+  content: "\e009";
+}
+.app-home:before {
+  content: "\e00a";
+}
+.app-import:before {
+  content: "\e00b";
+}
+.app-lock:before {
+  content: "\e00c";
+}
+.app-login:before {
+  content: "\e00d";
+}
+.app-logout:before {
+  content: "\e00e";
+}
+.app-lotto-ball:before {
+  content: "\e00f";
+}
+.app-lotto-game:before {
+  content: "\e010";
+}
+.app-mail:before {
+  content: "\e011";
+}
+.app-menu:before {
+  content: "\e012";
+}
+.app-money:before {
+  content: "\e013";
+}
+.app-online-service:before {
+  content: "\e014";
+}
+.app-phone:before {
+  content: "\e015";
+}
+.app-read:before {
+  content: "\e016";
+}
+.app-records:before {
+  content: "\e017";
+}
+.app-refresh:before {
+  content: "\e018";
+}
+.app-search:before {
+  content: "\e019";
+}
+.app-trophy:before {
+  content: "\e01a";
+}
+.app-user:before {
+  content: "\e01b";
+}
+.app-username:before {
+  content: "\e01c";
+}
+.app-wallet:before {
+  content: "\e01d";
+}
+.app-withdrawals:before {
+  content: "\e01e";
+}
+.app-work:before {
+  content: "\e01f";
+}
