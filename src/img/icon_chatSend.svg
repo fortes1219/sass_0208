@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="矩形_3197" data-name="矩形 3197" width="30" height="30" transform="translate(-15002 -5266)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_chatsSend" transform="translate(15002 5266)" clip-path="url(#clip-path)">
+    <g id="send" transform="translate(-15033.833 -5338)">
+      <g id="组_15333" data-name="组 15333" transform="translate(0 32)">
+        <path id="路径_2812" data-name="路径 2812" d="M.011,32v8.857l11.108,1.476L.011,44v8.667l24.1-10.333Z" transform="translate(35 13)" fill="#2c5b75"/>
+      </g>
+    </g>
+  </g>
+</svg>
