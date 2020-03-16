@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="矩形_3176" data-name="矩形 3176" width="44" height="44" transform="translate(-6490 -14715)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e6b0ff"/>
+      <stop offset="1" stop-color="#4c95ff"/>
+    </linearGradient>
+  </defs>
+  <g id="ic-event" transform="translate(6490 14715)" clip-path="url(#clip-path)">
+    <path id="路径_31386" data-name="路径 31386" d="M32,40H13a4,4,0,0,1-4-4V4a4,4,0,0,1,4-4H37a4,4,0,0,1,4,4V31ZM13,7V33a3,3,0,0,0,3,3H30V30a1,1,0,0,1,1-1h6V7a3,3,0,0,0-3-3H16A3,3,0,0,0,13,7ZM0,28.5V7H7V27.629L3.686,32ZM18,22a2,2,0,1,1,0-4H32a2,2,0,1,1,0,4Zm0-9a2,2,0,1,1,0-4H32a2,2,0,1,1,0,4ZM1,5A1,1,0,0,1,0,4V1A1,1,0,0,1,1,0H6A1,1,0,0,1,7,1V4A1,1,0,0,1,6,5Z" transform="translate(-6489 -14713)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

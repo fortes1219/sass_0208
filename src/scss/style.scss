@@ -1,360 +1,540 @@
-@import "_reset.scss";
 @import "_variable.scss";
 @import "_flexbox.scss";
 @import "_dataAttribute.scss";
-img {
-    max-width: 100%;
+@import "_mediaQueries.scss";
+
+
+img {max-width: 100%;}
+.relative {position: relative;}
+
+.click:hover {cursor: pointer;}
+.click:active {transform: scale(.95)}
+
+.hideM {
+  @include iXLandscape {
+    display: none;
+  }
 }
 
-@keyframes scaleDraw {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.1);
-    }
-    50% {
-        transform: scale(1);
-    }
-    75% {
-        transform: scale(1.1);
-    }
+
+/* Animated */
+.animateBeat:hover {
+  cursor: pointer;
+  animation-name:heartBeat;
+  animation-duration:.8s;
+  animation-iteration-count: infinite;
 }
 
-.effect:hover {
-    animation-name: scaleDraw;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 1.5s;
+@keyframes heartBeat{
+  0% {transform: scale(1);}
+  50% {transform: scale(.9);}
+  100% {transform: scale(1);}
 }
+
+/* Scrollbar */
+::-webkit-scrollbar {width:4px;}
+::-webkit-scrollbar-thumb {background: #2C5B75; }
+
+/* Color */
+.green {color: #8DC21F;}
+.lightblue {color: #2ABADA;}
+.orange {color: #FF4B21;}
+.yellow {color: #F7EB00;}
+
+[data-precent="65"] {width: 65%;}
 
 html {
+  touch-action: manipulation;
+  height: 100%;
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'Noto Sans TC';
     touch-action: manipulation;
     height: 100%;
-    /* footer menu圖片設定 */
-    $footMenu: 'bottom_menu_01', 'bottom_menu_02', 'bottom_menu_03', 'bottom_menu_04', 'bottom_menu_05', 'bottom_menu_06';
-    @each $currentPic in $footMenu {
-        .#{$currentPic} {
-            background: url('../img/#{$currentPic}.png') no-repeat center;
-        }
-    }
-    body {
-        font-family: "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        touch-action: manipulation;
-        height: 100%;
-        .main-wrap {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background: url('../img/bg.jpg') no-repeat;
-            background-size: cover;
-            overflow: hidden;
-            .header {
-                height: 180px;
-                .header-l {
-                    height: 80px;
-                }
-                .user {
-                    min-width: 45vh;
-                    height: 80px;
-                    position: relative;
-                    background: url('../img/user_status_bg.png') no-repeat;
-                    background-size: 100% 100%;
-                    padding: 15px;
-                    margin-right: 30px;
-                    .user-light {
-                        position: absolute;
-                        bottom: -35px;
-                        left: 50%;
-                        margin-left: -180px;
-                    }
-                    .user-pic {
-                        width: 8vh;
-                        border-radius: 50%;
-                        overflow: hidden;
-                        margin-right: 15px;
-                    }
-                    .user-info {
-                        margin-right: 10px;
-                        p {
-                            color: $white;
-                            font-size: 16px;
-                            font-weight: bold;
-                            margin-bottom: 8px;
-                        }
-                        .user-grade {
-                            height: 24px;
-                            background-color: #101B2C;
-                            border-radius: 24px;
-                            .progress-bar {
-                                width: 75%;
-                                height: 24px;
-                                background: #fff00e;
-                                background: linear-gradient(to bottom, #fff00e 0%, #f8cb0a 100%);
-                                border: 1px solid #FFF00E;
-                                border-radius: 24px;
-                                text-align: center;
-                            }
-                            .sr-only {
-                                font-size: 16px;
-                                font-weight: bold;
-                                line-height: 24px;
-                                color: #101B2C;
-                            }
-                        }
-                    }
-                    .user-star {
-                        width: 14vh;
-                        img {
-                            height: 40px;
-                            margin-right: 10px;
-                        }
-                        span {
-                            font-weight: bold;
-                            color: $white;
-                        }
-                    }
-                }
-                .amount {
-                    max-width: 30vh;
-                    height: 40px;
-                    position: relative;
-                    background: #003c69;
-                    background: linear-gradient(to bottom, #003c69 0%, #003b67 50%, #003155 51%, #003155 100%);
-                    border: 1px solid #055A96;
-                    border-radius: 15px;
-                    .amount-icon {
-                        width: 60px;
-                        height: 60px;
-                        position: absolute;
-                        top: -10px;
-                        left: -10px;
-                    }
-                    p {
-                        font-size: 24px;
-                        font-weight: bold;
-                        color: $white;
-                        line-height: 40px;
-                        text-align: right;
-                        padding: 0 15px 0 60px;
-                    }
-                }
-                .header-r {
-                    a {
-                        background-size: contain;
-                        position: relative;
-                        color: $white;
-                        display: block;
-                        .badge {
-                            width: 4vh;
-                            height: 4vh;
-                            border-radius: 50%;
-                            background: url('../img/count_bg.svg') no-repeat;
-                            position: absolute;
-                            font-size: 22px;
-                            font-weight: bold;
-                            line-height: 4vh;
-                            text-align: center;
-                            right: 10%;
-                            bottom: 30%;
-                        }
-                        .badge-new {
-                            width: 6vh;
-                            height: 6vh;
-                            background: url('../img/new.svg') no-repeat;
-                            position: absolute;
-                            right: 10%;
-                            bottom: 15%;
-                        }
-                    }
-                }
-            }
-            .container {
-                position: relative;
-                flex: 1;
-                .giftList {
-                    width: 20%;
-                    position: absolute;
-                    top: -12%;
-                    left: 30px;
-                    z-index: 99;
-                    a {
-                        width: 100%;
-                        height: 11vh;
-                        background: url('../img/quest_bg.png') no-repeat center;
-                        background-size: contain;
-                        position: relative;
-                        padding: 0 35% 0 10%;
-                        &.active::before {
-                            width: 100%;
-                            height: 11vh;
-                            position: absolute;
-                            content: "";
-                            background: url('../img/quest_bg_blur.png') no-repeat center;
-                            background-size: contain;
-                            -moz-filter: blur(8px);
-                            -webkit-filter: blur(8px);
-                            -o-filter: blur(8px);
-                            -ms-filter: blur(8px);
-                            filter: blur(8px);
-                            z-index: -1;
-                            left: 0px;
-                        }
-                        &.active span {
-                            width: 7vh;
-                            min-width: 50px;
-                        }
-                        span {
-                            width: 6vh;
-                            min-width: 40px;
-                            display: block;
-                            margin-right: 4%;
-                            img {
-                                width: 100%;
-                                height: auto;
-                            }
-                        }
-                        .giftList-icon {
-                            width: 10vh;
-                            position: absolute;
-                            top: 0px;
-                            right: -20px;
-                            img {
-                                width: 100%;
-                                height: auto;
-                            }
-                        }
-                    }
-                }
-            }
-            .mainGame {
-                width: 72%;
-                position: absolute;
-                right: 30px;
-                top: 30px;
-                a {
-                    width: 45vh;
-                    display: block;
-                    img {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        .footer {
-            height: 84px;
-            background-color: #07222D;
-            .chatroom {
-                width: 30%;
-                height: 200px;
-                position: absolute;
-                background-color: #071824;
-                border: 1px solid #063554;
-                left: 0px;
-                bottom: 0px;
-                z-index: 999;
-                padding: 10px;
-                .chatroom-top {
-                    flex: 1;
-                    overflow: hidden;
-                    margin-bottom: 10px;
-                    ul {
-                        color: $white;
-                        overflow: auto;
-                        margin-right: 10px;
-                        li {
-                            line-height: 26px;
-                            margin-bottom: 10px;
-                        }
-                        li:last-child {
-                            margin-bottom: 0px;
-                        }
-                    }
-                    a {
-                        min-width: 35px;
-                    }
-                }
-                .chatList-icon-01,
-                .chatList-icon-02,
-                .chatList-icon-03 {
-                    width: 6vh;
-                    height: 26px;
-                    color: $white;
-                    font-size: 16px;
-                    font-weight: bold;
-                    text-align: center;
-                    line-height: 26px;
-                    text-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.8);
-                    border-radius: 3px;
-                    margin-right: 10px;
-                }
-                .chatList-icon-01 {
-                    background: $chatList_bg01;
-                }
-                .chatList-icon-02 {
-                    background: $chatList_bg02;
-                }
-                .chatList-icon-03 {
-                    background: $chatList_bg03;
-                }
-                .chatList-text {
-                    flex: 1;
-                }
-                .font-green {
-                    color: $green;
-                }
-                .font-blue {
-                    color: $blue;
-                }
-                .font-yellow {
-                    color: $yellow;
-                }
-                .font-orange {
-                    color: $carrotOrange;
-                }
-                .chatroom-bottom {
-                    height: 35px;
-                    .chatInput {
-                        position: relative;
-                        flex: 1;
-                        margin-right: 2%;
-                        input {
-                            @include boxSizing;
-                            width: 100%;
-                            position: relative;
-                            background-color: #032E39;
-                            border: 0;
-                            border-radius: 3px;
-                            height: 35px;
-                            padding: 5px 35px 5px 10px;
-                            margin-right: 10px;
-                        }
-                        .chatSend {
-                            position: absolute;
-                            top: 2%;
-                            right: 0px;
-                        }
-                    }
-                    a {
-                        min-width: 35px;
-                    }
-                }
-            }
-            .footMenu {
-                width: 70%;
-                height: 100%;
-                padding: 0 10px;
-                a {
-                    width: 20vh;
-                    height: 8vh;
-                    background-size: contain;
-                    display: block;
-                    margin-right: 3px;
-                }
-                a:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-    }
+    background-color:#07222D;
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
+  }
 }
+
+.outer {
+  height: 100%;
+  overflow: hidden;
+
+  .top_menu {
+    height: 22vh;
+
+    .badge {
+      position: absolute;
+      right: 2vw;
+      bottom: 6vh;
+      width: 36px;
+      height: 36px;
+      background: url(../img/count_bg.svg) no-repeat;
+      color: #Fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.75;
+      z-index: 5;
+
+      @include laptop-width {
+        right: 1vw;
+        bottom: 5vh;
+        width: 30px;
+        height: 30px;
+      }
+      @include pad-width {
+        right: 1vw;
+        bottom: 5vh;
+        width: 30px;
+        height: 30px;
+      }
+      @include iXLandscape {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+      }
+
+    }
+
+    .new {
+      position: absolute;
+      right: 1vw;
+      bottom: 6.5vh;
+      width: 50px;
+      height: 20px;
+      background: url(../img/new.svg) no-repeat;
+      z-index: 5;
+      @include iXLandscape {
+        width: 5vw;
+      }
+    }
+
+    .userInfo {
+      position: relative;
+      padding: 1rem .5rem;
+      padding-right: 2rem;
+      background: url(../img/user_status_bg.png) no-repeat;
+      background-size: contain;
+      color: #fff;
+      @include laptop-width {
+        width: 27vw;
+      }
+      @include pad-width {
+        width: 30vw;
+        padding: .8rem .5rem;
+        padding-right: 1rem;
+      }
+      @include iXLandscape {
+        padding: .65rem;
+        padding-right: 2rem;
+      }
+      @include i8Landscape {
+        width: 32vw;
+        padding: 2px 8px;
+      }
+
+      .avatar {
+        width: 6vw;
+        border-radius: 100rem;
+        border: 2px solid #73599c;
+      }
+
+      .name {
+        width: 15vw;
+        margin: 0 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include pad-width {
+          font-size:14px;
+        }
+        @include iXLandscape {
+          font-size:12px;
+        }
+        @include i8Landscape {
+          transform: scale(.85);
+          margin: 0 6px;
+        }
+
+        .lvBar {
+          margin: 8px 0;
+          padding: 2px;
+          border-radius: 100rem;
+          background-color: #101B2C;
+          font-weight: 700;
+          text-shadow: -1px 0 #2C8FE0, 0 1px #2C8FE0, 1px 0 #2C8FE0, 0 -1px #2C8FE0;
+
+          .progress {
+            padding: 4px 12px;
+            border-radius: 100rem;
+            background: rgb(233,189,0);
+            background: linear-gradient(0deg, rgba(233,189,0,1) 0%, rgba(244,230,13,1) 100%);
+            @include i8Landscape {
+              padding: 2px 8px;
+            }
+          }
+        }
+      }
+
+      .star {
+        img {width:2vw; margin-right:.5rem;}
+        span {
+          font-size:1.25rem;
+          font-weight:700;
+          @include pad-width {
+            font-size:14px;
+          }
+          @include iXLandscape {
+            font-size:12px;
+          }
+        }
+      }
+
+      .bling {
+        position:absolute;
+        bottom:-3vh;
+        left:0;
+        
+        @include i8plusLandscape {
+          width: 32vw;
+          padding: .25rem .5rem;
+          bottom: -1.5vh;
+        }
+        @include i8Landscape {
+          bottom: -4vh;
+        }
+      }
+    }
+
+    .coinZone {
+      position: relative;
+      width: 20vw;
+      height: 8vh;
+      border-radius: 100rem;
+      background: rgb(0,60,105);
+      background: linear-gradient(180deg, rgba(2,75,130,0.8) 0%, rgba(2,75,130,0.8) 50%, rgba(0,58,101,0.8) 50%, rgba(0,58,101,0.8) 100%);
+      border: #036EB7 solid 1px;
+      margin: 3%;
+      padding: 2%;
+      padding-left: 5%;
+      color: #fff;
+      font-weight: 700;
+      font-size: 2rem;
+      @include laptop-width {
+        height: 5vh;
+        font-size: 1.5rem;
+      }
+      @include pad-width {
+        width: 17vw;
+        padding: 1.5%;
+        font-size: 1rem;
+        height: 4.5vh;
+      }
+      @include iXLandscape {
+        font-size:14px;
+        height: 8vh;
+      }
+      @include i8Landscape {
+        font-size: 12px;
+        height: 6vh;
+      }
+
+      img {
+        width: 10vh;
+        position: absolute;
+        left: -5%;
+        top: -8%;
+        @include laptop-width {
+          width: 6vh;
+        }
+        @include pad-width {
+          width: 5vh;
+        }
+        @include iXLandscape {
+          width: 8vh;
+        }
+        @include i8Landscape {
+          width: 7vh;
+        }
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    flex: 1;
+    
+    .dailyGift {
+      position: absolute;
+      top: -10vh;
+      width: 18%;
+      @include laptop-width {
+        width: 24%;
+      }
+      @include pad-width {
+        width: 25%;
+      }
+      @include iXLandscape {
+        top: -6vh;
+      }
+      @include i8Landscape {
+        width: 28%;
+      }
+
+      .giftItem {
+        position: relative;
+
+        .inner {
+          height: 11vh;
+          margin: 4px 0;
+          padding: 1.6rem .5rem;
+          background: url(../img/quest_bg.png) no-repeat;
+          background-size: cover;
+          @include laptop-width {
+            height: 9vh;
+          }
+          @include pad-width {
+            height: 9vh;
+          }
+          @include iXLandscape {
+            top: -5vh;
+            padding: 1rem .5rem;
+            height: 14vh;
+          }
+        }
+
+        .showOn {
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          -webkit-filter: blur(12px); /* Safari 6.0 - 9.0 */
+          filter: blur(12px);
+        }
+
+        .showOff {display: none;}
+        .tip {
+          width:auto;
+          height:20px;
+          @include laptop-width {
+            height:25px;
+          }
+          @include iXLandscape {
+            height:14px;
+          }
+        }
+        .deco {
+          width:3.5vw;
+          margin-right:4px;
+          @include laptop-width {
+            width:5vw;
+          }
+          @include iXLandscape {
+            width:5vw;
+          }
+        }
+  
+        .fish {
+          position: absolute;
+          top: 1vh;
+          right: -1vw;
+          width: 4vw;
+          @include laptop-width {
+            width: 5vw;
+          }
+          @include iXLandscape {
+            top: 3vh;
+            right: -1vw;
+            width: 4vw;
+          }
+        }
+      }
+    }
+
+    .gameType {
+      position: absolute;
+      width: 70%;
+      right: 2%;
+      top: 4vh;
+      @include iXLandscape {
+        position: absolute;
+        width: 60%;
+        right: 5%;
+        top: 6vh;
+      }
+    }
+  }
+
+  .footer {
+    background: #07222d;
+    background: linear-gradient(0deg, #07222d 0%, #1b3844 40%, rgba(7,34,45,0) 40%, rgba(7,34,45,0) 100%);
+    @include iXLandscape {
+      background: #1f334e;
+      background: linear-gradient(0deg, #1f334e 0%, #1f334e 60%, rgba(7,34,45,0) 60%, rgba(7,34,45,0) 100%);
+    }
+    @include i8Landscape {
+      background: linear-gradient(0deg, #1f334e 0%, #1f334e 50%, rgba(7,34,45,0) 50%, rgba(7,34,45,0) 100%);
+    }
+
+    .chatLog {
+      display: flex;
+      position: relative;
+      padding: 6px;
+      border: #05446f solid 1px;
+      background-color: rgba(6, 44, 70, 0.8);
+      color: #fff;
+      font-size: 14px;
+
+      p {
+        padding-right:8px;
+        @include iXLandscape {
+          font-size: 12px;
+        }
+      }
+
+      .scroll {
+        height: 16vh;
+        margin-bottom: 8px;
+        padding-top: 4px;
+        overflow-y: auto;
+        @include iXLandscape {
+          height: 10vh;
+        }
+      }
+
+      @mixin chatLabel {
+        min-width: 3vw;
+        margin-right: 6px;
+        border-radius: 4px;
+        text-shadow: 0 1px 1px #000;
+        text-align: center;
+        line-height: 1.8;
+        color: #fff;
+        @include iXLandscape {
+          min-width: 4vw;
+          font-size: 12px;
+        }
+      }
+
+      .warning {
+        @include chatLabel;
+        background: #f27a00;
+        background: linear-gradient(0deg, #f27a00 0%, #f2ce00 100%);
+      }
+
+      .error {
+        @include chatLabel;
+        background: rgb(255,51,13);
+        background: linear-gradient(0deg, rgba(255,51,13,1) 0%, rgba(255,97,51,1) 100%);
+      }
+
+      .info {
+        @include chatLabel;
+        background: rgb(32,119,255);
+        background: linear-gradient(0deg, rgba(32,119,255,1) 0%, rgba(94,185,255,1) 100%);
+      }
+
+      .setting {
+        width: 3vw;
+        margin-left: 8px;
+        @include iXLandscape {
+          width: 6vw;
+        }
+      }
+
+      .inputSent {
+        position: absolute;
+        right: 7px;
+        bottom: 7px;
+        cursor: pointer;
+
+        @include iXLandscape {
+          width: 20px;
+          right: 6px;
+          bottom: 6px;
+        }
+
+      }
+    }
+
+    .tab {
+      width: 10vw;
+      margin: 2px;
+      padding: .5rem;
+      border: #136A9E solid 1px;
+      background: #5a5981;
+      background: radial-gradient(circle, #5a5981 0%, #2d3f69 100%);
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      cursor: pointer;
+
+      @include laptop-width {
+        width: auto;
+      }
+      @include i8Landscape {
+        padding: .25rem;
+      }
+      
+
+      &:hover {
+        background: #2D3F69;
+        background: radial-gradient(circle, #2D3F69 0%, #2d3f69 100%);
+      }
+
+      &:active {transform: scale(.95);}
+
+      img {
+        margin-right:.5rem;
+        @include pad-width {
+          width: 2.5vw;
+        }
+        @include iXLandscape {
+          width: 2vw;
+          margin-right:0;
+        }
+      }
+
+      span {
+        color: #2CB4E0;
+        letter-spacing: 8px;
+        font-size: 1.5rem;
+        @include pad-width {
+          font-size:16px;
+          letter-spacing: 0px;
+        }
+        @include iXLandscape {
+          font-size: 12px;
+        }
+        @include i8Landscape {
+          letter-spacing: 0px;
+        }
+      }
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 8px;
+      padding-right: 3rem;
+      box-sizing: border-box;
+      border: 3px solid #0a3c61;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+      background-color: #0a3c61;
+      color: #fff;
+      @include iXLandscape {
+        padding: 4px;
+        padding-right: 2rem;
+        font-size: 14px;
+      }
+    }
+    
+    input[type=text]:focus {
+      border: 3px solid #0d588e;
+    }
+  }
+}
+
+

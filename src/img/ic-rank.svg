@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="矩形_3177" data-name="矩形 3177" width="44" height="44" transform="translate(-6425 -14715)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e6b0ff"/>
+      <stop offset="1" stop-color="#4c95ff"/>
+    </linearGradient>
+  </defs>
+  <g id="ic-rank" transform="translate(6425 14715)" clip-path="url(#clip-path)">
+    <path id="路径_31385" data-name="路径 31385" d="M32,39H8V34a5.006,5.006,0,0,1,5-5h5V26.754A12.52,12.52,0,0,1,8.5,18H8a8.01,8.01,0,0,1-8-8v-7H8V0H33V3.006h8v7a8.008,8.008,0,0,1-8,8h-.5A12.51,12.51,0,0,1,22,26.915V29h5a5.006,5.006,0,0,1,5,5v5h0ZM11,14.5a9.5,9.5,0,1,0,19,0V3H11ZM33,14h2a2,2,0,0,0,2-2V6H33ZM4,12a2,2,0,0,0,2,2H8V6H4Zm16.5,3.819L17.1,17l.018-3.764L15,10.2l3.41-1.146L20.5,6l2.091,3.056L26,10.2l-2.118,3.035L23.9,17Z" transform="translate(-6423 -14712.002)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

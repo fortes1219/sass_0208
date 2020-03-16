@@ -1,128 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" type="text/css" href="css/reset.css" /> -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <title>捕魚大廳</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" class="next-head">
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<title>捕魚大廳</title>
 </head>
 
 <body>
-  <div class="main-wrap row vertical">
-    <div class="header row horizontal space" data-row-count="2">
-      <div class="header-l row horizontal v_center data_row" data-row-count="2">
-        <div class="user row horizontal v_center data_row">
-          <div class="user-pic"><img src="img/user_pic.jpg"></div>
-          <div class="user-info">
-            <p>霹靂無敵派派派大星</p>
-            <div class="user-grade">
-              <div class="progress-bar">
-                <span class="sr-only">Lv 92</span>
-              </div>
-            </div>
-          </div>
-          <div class="user-star row horizontal v_center">
-            <img src="img/star.svg">
-            <span>x168</span>
-          </div>
-          <div class="user-light"><img src="img/user_status_bling.png" width="340"></div>
-        </div>
-        <div class="amount data_row">
-          <div class="amount-icon"><img src="img/coin.svg"></div>
-          <p>20,000</p>
-        </div>
-      </div>
-      <div class="header-r row horizontal v_center data_row">
-        <a href="#" class="effect"><img src="img/top_menu_01.png"></a>
-        <a href="#" class="effect"><img src="img/top_menu_02.png">
-          <div class="badge">9</div>
-        </a>
-        <a href="#" class="effect"><img src="img/top_menu_03.png">
-          <div class="badge-new"></div>
-        </a>
-        <a href="#" class="effect"><img src="img/top_menu_04.png">
-          <div class="badge-new"></div>
-        </a>
-        <a href="#" class="effect"><img src="img/top_menu_05.png">
-          <div class="badge">9</div>
-        </a>
-      </div>
-    </div>
-    <div class="container">
-      <div class="giftList">
-        <img src="img/daily_quest_header.png">
-        <a href="#" class="row horizontal v_center active">
-          <span><img src="img/get_reward_btn.png"></span>
-          <img src="img/giftList_text_01.svg">
-          <div class="giftList-icon"><img src="img/fish_1.png"></div>
-        </a>
-        <a href="#" class="row horizontal v_center">
-          <span><img src="img/lock.png"></span>
-          <img src="img/giftList_text_02.svg">
-          <div class="giftList-icon"><img src="img/fish_2.png"></div>
-        </a>
-        <a href="#" class="row horizontal v_center">
-          <span><img src="img/lock.png"></span>
-          <img src="img/giftList_text_03.svg">
-          <div class="giftList-icon"><img src="img/fish_3.png"></div>
-        </a>
-        <a href="#" class="row horizontal v_center">
-          <span><img src="img/lock.png"></span>
-          <img src="img/giftList_text_04.svg">
-          <div class="giftList-icon"><img src="img/treasurebox.png"></div>
-        </a>
-      </div>
-      <div class="mainGame row horizontal end">
-        <a href="#" class="effect"><img src="img/game01.png"></a>
-        <a href="#" class="effect"><img src="img/game02.png"></a>
-        <a href="#" class="effect"><img src="img/game03.png"></a>
-      </div>
-    </div>
-    <div class="footer row horizontal end">
-      <div class="chatroom row vertical">
-        <div class="chatroom-top row horizontal">
-          <ul>
-            <li class="row horizontal">
-              <span class="chatList-icon-01">系統</span>
-              <span class="chatList-text">
-                <font class="font-green">充值滿額送!2019/10/20前充值滿3000元的玩家，即可獲得[遠洋大物獵人]禮包</font>
-              </span>
-            </li>
-            <li class="row horizontal">
-              <span class="chatList-icon-02">世界</span>
-              <span class="chatList-text">
-                <font class="font-blue">[你知道我知道獨眼龍也知道]</font>擊殺<font class="font-yellow">黃金鎚頭鯊!</font>
-              </span>
-            </li>
-            <li class="row horizontal">
-              <span class="chatList-icon-03">船隊</span>
-              <span class="chatList-text">
-                <font class="font-orange">是不是到公海了:</font>......被截胡了
-              </span>
-            </li>
-          </ul>
-          <a href="#"><img src="img/icon_arrow_up.svg"></a>
-        </div>
-        <div class="chatroom-bottom row horizontal">
-          <div class="chatInput">
-            <input type="text">
-            <a href="#" class="chatSend"><img src="img/icon_chatSend.svg"></a>
-          </div>
-          <a href="#"><img src="img/icon_config.svg"></a>
-        </div>
-      </div>
-      <div class="footMenu row horizontal end">
-        <a href="#" class="bottom_menu_01 effect"></a>
-        <a href="#" class="bottom_menu_02 effect"></a>
-        <a href="#" class="bottom_menu_03 effect"></a>
-        <a href="#" class="bottom_menu_04 effect"></a>
-        <a href="#" class="bottom_menu_05 effect"></a>
-        <a href="#" class="bottom_menu_06 effect"></a>
-      </div>
-    </div>
-  </div>
-</body>
+	<div class="row outer vertical">
+		<div class="top_menu">
+			<div class="row horizontal" data-row-count="2">
+				<div class="data_row">
+					<div class="row horizontal" data-row-count="2">
+						<div class="data_row userInfo">
+							<div class="row horizontal center">
+								<div><img class="avatar" src="img/avatar.jpg"/></div>
+								<div class="name">
+									<span>萬中選一小仙女萬中選一小仙女</span>
+									<div class="lvBar">
+										<div class="progress" data-precent="65">
+											<span>Lv92</span>
+										</div>
+									</div>
+								</div>
+								<div class="data_row row horizontal center star">
+									<img src="img/star.svg"/>
+									<span>x1688</span>
+								</div>
+							</div>
+							<img class="bling" src="img/user_status_bling.png"/>
+						</div>
 
+						<div class="data_row coinZone" data-font-align="right">
+							<img src="img/coin.svg"/>
+							<span>888,888,866,666</span>
+						</div>
+					</div>
+				</div>
+				<div class="data_row row horizontal">
+					<div class="relative animateBeat">
+						<div class=""></div>
+						<img src="img/top_menu_01.png"/>
+					</div>
+					<div class="relative animateBeat">
+						<div class="badge">8</div>
+						<img src="img/top_menu_02.png"/>
+					</div>
+					<div class="relative animateBeat">
+						<div class="new"></div>
+						<img src="img/top_menu_03.png"/>
+					</div>
+					<div class="relative animateBeat">
+						<div class="new"></div>
+						<img src="img/top_menu_04.png"/>
+					</div>
+					<div class="relative animateBeat">
+						<div class="badge">9+</div>
+						<img src="img/top_menu_05.png"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container row horizontal" data-space="padding-xs">
+			<div class="dailyGift">
+				<div class="hideM">
+					<img src="img/daily_quest_header.png"/>
+				</div>
+
+				<div class="giftItem animateBeat">
+					<div class="inner">
+						<div class="row horizontal v_center" data-row-count="10">
+							<img class="deco" src="img/get_reward_btn.png"/>
+							<img class="tip" src="img/gift1_active.svg"/>
+						</div>
+						<img class="fish" src="img/fish_1.png"/>
+					</div>
+					<img class="showOn" src="img/quest_bg_blur.png"/>
+				</div>
+				
+				<div class="giftItem">
+					<div class="inner">
+						<div class="row horizontal v_center" data-row-count="10">
+							<img class="deco" src="img/lock.png"/>
+							<img class="tip" src="img/gift2.svg"/>
+						</div>
+						<img class="fish" src="img/fish_2.png"/>
+					</div>
+					<img class="showOff" src="img/quest_bg_blur.png"/>
+				</div>
+
+				<div class="giftItem">
+					<div class="inner">
+						<div class="row horizontal v_center" data-row-count="10">
+							<img class="deco" src="img/lock.png"/>
+							<img class="tip" src="img/gift3.svg"/>
+						</div>
+						<img class="fish" src="img/fish_3.png"/>
+					</div>
+					<img class="showOff" src="img/quest_bg_blur.png"/>
+				</div>
+
+				<div class="giftItem">
+					<div class="inner">
+						<div class="row horizontal v_center" data-row-count="10">
+							<img class="deco" src="img/lock.png"/>
+							<img class="tip" src="img/gift4.svg"/>
+						</div>
+						<img class="fish" src="img/treasurebox.png"/>	
+					</div>
+					<img class="showOff" src="img/quest_bg_blur.png"/>
+				</div>
+			</div>
+
+			<div class="row horizontal gameType">
+				<div class="animateBeat"><img src="img/game01.png"/></div>
+				<div class="animateBeat"><img src="img/game02.png"/></div>
+				<div class="animateBeat"><img src="img/game03.png"/></div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="row horizontal">
+				<div class="chatLog">
+					<div>
+						<div class="scroll">
+							<div class="row horizontal v_center" data-space="space-bottom">
+								<div class="data_row warning">系統</div>
+								<p class="green">充值滿額送！2019/10/20前充值滿3,000元的玩家，即可獲得「遠洋大物獵人」禮包！</p>
+							</div>
+	
+							<div class="row horizontal v_center" data-space="space-bottom">
+								<div class="info">世界</div>
+								<p>「<span class="lightblue">你知道我知道獨眼龍也知道</span>」擊殺<span class="yellow">黃金鎚頭鯊！</span></p>
+							</div>
+	
+							<div class="row horizontal v_center" data-space="space-bottom">
+								<div class="error">船隊</div>
+								<p><span class="orange">是不是到公海了：</span>......被截胡了</p>
+							</div>
+							<div class="row horizontal v_center" data-space="space-bottom">
+								<div class="data_row warning">系統</div>
+								<p class="green">充值滿額送！2019/10/20前充值滿3,000元的玩家，即可獲得「遠洋大物獵人」禮包！</p>
+							</div>
+	
+							<div class="row horizontal v_center" data-space="space-bottom">
+								<div class="info">世界</div>
+								<p>「<span class="lightblue">你知道我知道獨眼龍也知道</span>」擊殺<span class="yellow">黃金鎚頭鯊！</span></p>
+							</div>
+	
+							<div class="row horizontal v_center" data-space="space-bottom">
+								<div class="error">船隊</div>
+								<p><span class="orange">是不是到公海了：</span>......被截胡了</p>
+							</div>
+						</div>
+
+						<div class="row horizontal">
+							<input type="text" name="message" value="只好幫QQ"/>
+							<img class="inputSent click" src="img/ic-sent.svg"/>
+						</div>
+					</div>
+					
+					<div class="row vertical space setting">
+						<div><img class="click" src="img/icon_arrow_up.svg"/></div>
+						<div><img class="click" src="img/icon_config.svg" onclick=""/></div>
+					</div>
+				</div>
+				
+				<div class="row horizontal bottom_right" data-space="padding-xs">
+					<div class="row horizontal center around tab">
+						<img src="img/ic-group.svg"/>
+						<span>社群</span>
+					</div>
+					<div class="row horizontal center around tab">
+						<img src="img/ic-event.svg"/>
+						<span>任務</span>
+					</div>
+					<div class="row horizontal center around tab">
+						<img src="img/ic-rank.svg"/>
+						<span>總排名</span>
+					</div>
+					<div class="row horizontal center around tab">
+						<img src="img/ic-book.svg"/>
+						<span>圖鑑</span>
+					</div>
+					<div class="row horizontal center around tab">
+						<img src="img/ic-setting.svg"/>
+						<span>設定</span>
+					</div>
+					<div class="row horizontal center around tab">
+						<img src="img/ic-logout.svg"/>
+						<span>登出</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
 </html>

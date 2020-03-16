@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="矩形_3178" data-name="矩形 3178" width="44" height="44" transform="translate(-6360 -14715)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e6b0ff"/>
+      <stop offset="1" stop-color="#4c95ff"/>
+    </linearGradient>
+  </defs>
+  <g id="ic-book" transform="translate(6360 14715)" clip-path="url(#clip-path)">
+    <path id="路径_31384" data-name="路径 31384" d="M31,41H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H31a3,3,0,0,1,3,3V4H7.5a2.5,2.5,0,1,0,0,5h.244V22.557l4.01-4.412,3.609,4.412V9H34V38A3.005,3.005,0,0,1,31,41Z" transform="translate(-6355 -14712.998)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -1,7 +1,64 @@
+$pc-media:1600px;
+$pcs-media:1441px;
 
-$iphoneX: "screen and (min-width: 375px) and (min-height: 812px)";
-@mixin iphoneX {
-    @media #{$iphoneX} {
+$laptop-media:1025px;
+$laptops-media:1024px;
+
+$pad-media:720px;
+$pads-media:719px;
+
+$phone-media:375px;
+$phones-media:374px;
+
+$portrait:portrait;
+$landscape:landscape;
+
+
+@mixin pc-width() {
+    @media all and (min-width: $pc-media) {
+        @content;
+    }
+}
+
+@mixin laptop-width() {
+    @media all and (min-width:$laptop-media) and (max-width: $pcs-media) {
+        @content;
+    }
+}
+
+@mixin pad-width() {
+    @media all and (min-width:$pad-media) and (max-width: $laptops-media) {
+        @content;
+    }
+}
+
+@mixin phone-width() {
+    @media all and (min-width:$phone-media) and (max-width: $pads-media) {
+        @content;
+      }
+}
+
+@mixin iphone5-width() {
+    @media all and (max-width: $phones-media) {
+        @content;
+      }
+}
+
+
+@mixin iXLandscape() {
+    @media only screen and (max-device-width: 812px) and (min-device-height: 375px) and (orientation: $landscape) {
+        @content;
+    }
+}
+
+@mixin i8plusLandscape() {
+    @media only screen and (max-device-width: 736px) and (min-device-height: 375px) and (orientation: $landscape) {
+        @content;
+    }
+}
+
+@mixin i8Landscape() {
+    @media only screen and (max-device-width: 667px) and (min-device-height: 375px) and (orientation: $landscape) {
         @content;
     }
 }
